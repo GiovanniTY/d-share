@@ -1,0 +1,41 @@
+/* src/Navbar.css */
+.navbar {
+    background-color: #000000; /* Colore di sfondo nero */
+    padding: 1rem; /* Spaziatura interna */
+    border-bottom: 2px solid transparent; /* Aggiungi un bordo inferiore trasparente per la sfumatura */
+    background-image: linear-gradient(to right, #00bfff, #000000); /* Sfondo sfumato */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Larghezza massima del contenitore */
+    margin: 0 auto; /* Centrare il contenitore */
+}
+
+.logo {
+    color: white; /* Colore del testo */
+    font-size: 1.5rem; /* Dimensione del font */
+    font-weight: bold; /* Grassetto */
+}
+
+.nav-links {
+    display: flex; /* Flexbox per allineare i link */
+    gap: 1.5rem; /* Spazio tra i link */
+}
+
+.nav-links a {
+    color: white; /* Colore del testo dei link */
+    text-decoration: none; /* Rimuovi la sottolineatura */
+    padding: 10px 15px; /* Spaziatura interna per i pulsanti */
+    border: 2px solid transparent; /* Bordo trasparente */
+    border-radius: 5px; /* Angoli arrotondati */
+    transition: background-color 0.3s, border-color 0.3s; /* Transizione per effetti hover */
+}
+
+.nav-links a:hover {
+    text-decoration: none; /* Rimuovi la sottolineatura al passaggio del mouse */
+    background-color: rgba(0, 191, 255, 0.2); /* Colore di sfondo al passaggio del mouse */
+    border-color: #00bfff; /* Colore del bordo turchese al passaggio del mouse */
+}

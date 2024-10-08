@@ -1,0 +1,55 @@
+/* src/Hero.css */
+
+.hero {
+    position: relative;
+    height: 100vh; /* Imposta l'altezza a 100% della viewport */
+    overflow: hidden; /* Nasconde eventuali contenuti che escono dalla sezione */
+}
+
+.background-video {
+    position: absolute; /* Posiziona il video in modo assoluto */
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Imposta la larghezza al 100% */
+    height: 140%; /* Imposta l'altezza al 100% */
+    object-fit: cover; /* Riempi l'area mantenendo il rapporto d'aspetto */
+    z-index: 1; /* Assicura che il video sia in background */
+    transform: translate(-50%, -40%); /* Centra il video */
+}
+
+.hero-content {
+    position: relative; /* Posiziona il contenuto in modo relativo */
+    z-index: 2; /* Assicura che il contenuto sia in primo piano */
+    color: white; /* Colore del testo */
+    text-align: right; /* Allinea il testo a destra */
+    padding: 40px; /* Spazio interno */
+    margin-top: 150px; /* Aggiungi un margine superiore per spostare il testo verso il basso */
+    margin-left: 700px; /* Sposta il contenuto a destra */
+    max-width: 500px; /* Imposta una larghezza massima */
+    transition: opacity 0.5s ease; /* Aggiungi una transizione per l'opacità */
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* Dimensione del titolo */
+    margin-bottom: 1rem; /* Margine inferiore */
+}
+
+.hero-content p {
+    font-size: 1.25rem; /* Dimensione del testo del paragrafo */
+    margin-bottom: 1rem; /* Margine inferiore */
+}
+
+.cta-button {
+    display: inline-block; /* Visualizza come blocco in linea */
+    background-color: #007BFF; /* Colore di sfondo del pulsante */
+    color: white; /* Colore del testo */
+    padding: 10px 20px; /* Spaziatura interna */
+    border-radius: 5px; /* Angoli arrotondati */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold; /* Grassetto */
+    transition: background-color 0.3s; /* Transizione per l'effetto hover */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Colore di sfondo al passaggio del mouse */
+}
