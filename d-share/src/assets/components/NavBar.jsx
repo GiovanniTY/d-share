@@ -1,6 +1,6 @@
 // src/Navbar.jsx
 import React from 'react';
-import '../../NavBar.css'
+import '../../NavBar.scss'
 
 const Navbar = () => {
   return (
@@ -9,7 +9,6 @@ const Navbar = () => {
         <h1 className="logo">D-Share</h1>
         <div className="nav-links">
           <a href="#launch-app">Launch App</a>
-          <a href="#launch-testnet">Launch Testnet</a>
         </div>
       </div>
     </nav>
