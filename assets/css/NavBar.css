@@ -1,0 +1,46 @@
+.navbar {
+  background-color: #000000;
+  padding: 1rem;
+  border-bottom: 2px solid transparent;
+  /*     background-image: linear-gradient(to right, #00bfff, #000000); */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s, border-color 0.3s;
+  background-color: #01C3DC;
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border: 2px solid transparent;
+}
+.nav-links a:hover {
+  text-decoration: none;
+  color: white;
+}
+.nav-links a:hover:active {
+  transform: scale(0.95);
+  border-color: linear-gradient(180deg, #00E2FF 0%, #F8F8FF 48%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 191, 255, 0.6);
+}/*# sourceMappingURL=NavBar.css.map */
