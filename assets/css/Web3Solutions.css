@@ -16,13 +16,13 @@
   z-index: 1;
   animation: bubble-animation 5s ease-in-out infinite;
 }
-.web3-solution h4 {
+.web3-solution h3 {
   font-size: 1rem;
   margin-bottom: 2rem;
   text-align: center;
   color: #9CF4FF;
 }
-.web3-solution h5 {
+.web3-solution h2 {
   font-size: 3rem;
   margin-bottom: 5rem;
   text-align: center;

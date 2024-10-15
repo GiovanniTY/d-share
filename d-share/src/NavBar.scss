@@ -17,10 +17,16 @@
 }
 
 .logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+    display: flex;
+    align-items: center;
+  
+    .logo-image {
+      width: 120px;
+      height: 80px;
+      object-fit: contain;
+    }
+  }
+  
 
 .nav-links {
     display: flex;

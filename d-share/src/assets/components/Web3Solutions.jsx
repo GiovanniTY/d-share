@@ -4,13 +4,13 @@ import '../../Web3Solutions.scss';
 const Web3Solutions = () => {
     return (
       <div className="web3-solution">
-        <h4>Web 3 Solution</h4>
-        <h5>EMBRACE TRUST IN CODE</h5>
+        <h3>Web 3 Solution</h3>
+        <h2>EMBRACE TRUST IN CODE</h2>
         <div className="web3-container">
           <div className="secure">
             <div className="title-icon">
               <img src="d-share-icon/secure-business.png" alt="Secure Business Transactions" />
-              <h6 className="title-container">Secure Business Transactions</h6>
+              <h4 className="title-container">Secure Business Transactions</h4>
             </div>
             <div className="web3-content">
               <p>
@@ -21,7 +21,7 @@ const Web3Solutions = () => {
           <div className="versatile">
             <div className="title-icon">
               <img src="d-share-icon/versatile2.png" alt="Versatile Deal-making" />
-              <h6 className="title-container">Versatile Deal-making</h6>
+              <h4 className="title-container">Versatile Deal-making</h4>
             </div>
             <div className="web3-content">
               <p>
@@ -32,7 +32,7 @@ const Web3Solutions = () => {
           <div className="fair">
             <div className="title-icon">
               <img src="d-share-icon/fairconflict.png" alt="Fair Conflict Resolution" />
-              <h6 className="title-container">Fair Conflict Resolution</h6>  
+              <h4 className="title-container">Fair Conflict Resolution</h4>  
             </div>
             <div className="web3-content">
               <p>
@@ -43,7 +43,7 @@ const Web3Solutions = () => {
           <div className="data">
             <div className="title-icon">
               <img src="d-share-icon/Oracle.png" alt="Data Sourcing" />
-              <h6 className="title-container">Data Sourcing (soon)</h6>
+              <h4 className="title-container">Data Sourcing (soon)</h4>
             </div>
             <div className="web3-content">
               <p>
