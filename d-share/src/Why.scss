@@ -147,3 +147,26 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .why-d-share {
+    .feature-image {
+      display: none;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature {
+      &:nth-child(even) {
+        transform: translateY(0);
+      }
+    }
+
+    &::before, .ghost-grid::before {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}

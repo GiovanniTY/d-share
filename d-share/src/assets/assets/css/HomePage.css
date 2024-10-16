@@ -1,0 +1,28 @@
+.home-page {
+  position: relative;
+}
+
+.hero-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.escrow-wrapper {
+  position: relative;
+  z-index: 20;
+  background-color: #fff;
+}
+
+.web3-solutions-wrapper {
+  position: relative;
+  z-index: 30;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+}/*# sourceMappingURL=HomePage.css.map */

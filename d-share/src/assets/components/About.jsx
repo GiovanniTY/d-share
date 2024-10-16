@@ -39,7 +39,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className="item-about">
-                    <img src="/avatar/Tarek afvatar.png" alt="Tom Guisgand" />
+                    <img src="/avatar/Tom avatar.png" alt="Tom Guisgand" />
                     <h3>Tom Guisgand</h3>
                     <p>Operational Maestro</p>
                     <div className="round-icon">

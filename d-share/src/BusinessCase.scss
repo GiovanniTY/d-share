@@ -1,98 +1,190 @@
 @import 'variables';
 
-.business-container{
+.business-container {
    background-color: black;
    font-family: "Montserrat", Sans-serif;
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 4rem 2rem;
+   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+   gap: 2rem;
    max-width: 1200px;
    margin: 0 auto;
    color: white;
+   padding: 2rem;
+   position: relative;
+   overflow: hidden;
+
    &::before {
     content: '';
     position: absolute;
-    margin-top: 400px;
-    right:300px;
-    width: 500px;
-    height: 500px;
+    top: 400px;
+    right: 10%;
+    width: 50vw;
+    height: 50vw;
+    max-width: 500px;
+    max-height: 500px;
     background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
     border-radius: 50%;
     z-index: 1;
     animation: bubble-animation 5s ease-in-out infinite;
    }
 
-   .feature{
+   .feature {
     background-color: #10131C;
     border-radius: 12px;
     border: 2px solid black;
-    padding: 2rem;
-    height: 200px;
+    padding: 1.5rem;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     transition: transform 0.3s ease;
-    h3{
+
+    h3 {
         margin-bottom: 1rem;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
     }
 
-
+    p {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        line-height: 1.6;
+    }
    }
-   .title, .plus{
+
+   .title, .plus {
     background-color: transparent;
     justify-content: center;
     align-items: center;
-    h4{
-        font-size: 1.4rem;
+    text-align: center;
+
+    h4 {
+        font-size: clamp(1.2rem, 2vw, 1.4rem);
         margin-bottom: 0.5rem;
         color: $paragraph-color;
-        text-align: start;
     }
-    h2{
-        font-size: 3.5rem;
+
+    h2 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
         background: $gradient-title;
         -webkit-background-clip: text; 
-        font-family: "Montserrat", Sans-serif;
         background-clip: text; 
         color: transparent;
-        
     }
-    .plus-icon{
+
+    .plus-icon {
+        font-size: clamp(30px, 5vw, 50px);
+    }
+   }
+
+   .international, .secure {
+    border-left: 2px solid transparent;
+    transition: border-left-color 0.3s ease;
+
+    h3 {
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      border-left-color: #a487ff;
+
+      h3 {
+        color: #a487ff;
+      }
+    }
+   }
+
+   .advertiser, .venture {
+    border-left: 2px solid transparent;
+    transition: border-left-color 0.3s ease;
+
+    h3 {
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      border-left-color: $paragraph-color;
+
+      h3 {
+        color: $paragraph-color;
+      }
+    }
+   }
+}
+
+@media (min-width: 1100px) {
+  .business-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1400px;
+
+    .feature {
+      min-height: 250px;
+      padding: 2rem;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .title, .plus {
+      h2 {
+        font-size: 3.5rem;
+      }
+
+      h4 {
+        font-size: 1.4rem;
+      }
+
+      .plus-icon {
         font-size: 50px;
       }
-   }
-
-   .international, .secure{
-    border-left: 2px solid transparent;
-  transition: border-right-color 0.3s ease;
-
-  h3 {
-    transition: color 0.3s ease;
-  }
-
-  &:hover {
-    border-left-color: #a487ff;
-
-    h3 {
-      color: #a487ff;
     }
   }
 }
-.advertiser, .venture{
-    border-left: 2px solid transparent;
-  transition: border-right-color 0.3s ease;
 
-  h3 {
-    transition: color 0.3s ease;
+@media (max-width: 1099px) and (min-width: 769px) {
+  .business-container {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  &:hover {
-    border-left-color: $paragraph-color;
+@media (max-width: 768px) {
+  .business-container {
+    grid-template-columns: 1fr;
 
-    h3 {
-      color: $paragraph-color;
+    &::before {
+      top: 200px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 80vw;
+      height: 80vw;
+    }
+
+    .title, .plus {
+      text-align: center;
+
+      h4 {
+        text-align: center;
+      }
     }
   }
-
 }
-   }
+
+@media (max-width: 480px) {
+  .business-container {
+    padding: 1rem;
+
+    .feature {
+      min-height: 150px;
+      padding: 1rem;
+    }
+
+    &::before {
+      top: 100px;
+      width: 100vw;
+      height: 100vw;
+    }
+  }
+}

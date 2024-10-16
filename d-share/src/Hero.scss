@@ -81,7 +81,7 @@
         position: absolute;
         height: 130vh; 
         width: 200vw; 
-        top: 50%;
+        top: 60%;
         left: 100%; 
         transform: translate(-50%, -50%); 
         object-fit: cover; 
@@ -93,7 +93,7 @@
         position: relative;
         text-align: center;
         padding: 40px;
-        margin-top: 50px;
+        margin-top: 120px;
         margin-right: 10px;
         max-width: 400px;
         transition: opacity 0.5s ease;
@@ -131,9 +131,9 @@
 @media (min-width: 420px)and (max-width: 600px){
     .background-video {
         position: absolute;
-        height: 130vh; 
+        height: 110vh; 
         width: 200vw; 
-        top: 50%;
+        top: 60%;
         left: 100%; 
         transform: translate(-50%, -50%); 
         object-fit: cover; 
@@ -144,7 +144,7 @@
         position: relative;
         text-align: center;
         padding: 40px;
-        margin-top: 50px;
+        margin-top: 110px;
         margin-right: 10px;
         max-width: 400px;
         transition: opacity 0.5s ease;
@@ -332,7 +332,55 @@
 
 }
 
+@media (min-width: 300px)and (max-width: 359px){
+    .background-video {
+        position: absolute;
+        height: 130vh; 
+        width: 200vw; 
+        top: 60%;
+        left: 100%; 
+        transform: translate(-50%, -50%); 
+        object-fit: cover; 
+        
+    }
+    
+
+    .hero-content {
+        position: relative;
+        text-align: center;
+        padding: 40px;
+        margin-top: 120px;
+        margin-right: 10px;
+        max-width: 400px;
+        transition: opacity 0.5s ease;
+    
+    }
+
+    .hero-content h1 {
+        margin-top: 70px;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        background: $gradient-title;
+        -webkit-background-clip: text; 
+        background-clip: text; 
+        color: transparent;
+    }
+
+    #Refefining{
+        font-size: 1.45rem;
+        margin-bottom: 2rem;
+        font-family: "Montserrat", Sans-serif;
+        font-weight: normal;
+    
+    }
+    
+    #D-Share{
+        font-size: 1.20rem;
+        color:$paragraph-color;
+        font-family: "Montserrat", Sans-serif;
+        font-weight: normal;
+    }
 
 
-
+}
 
