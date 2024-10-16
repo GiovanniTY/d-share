@@ -1,0 +1,98 @@
+@import 'variables';
+
+.business-container{
+   background-color: black;
+   font-family: "Montserrat", Sans-serif;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 4rem 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+   color: white;
+   &::before {
+    content: '';
+    position: absolute;
+    margin-top: 400px;
+    right:300px;
+    width: 500px;
+    height: 500px;
+    background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: bubble-animation 5s ease-in-out infinite;
+   }
+
+   .feature{
+    background-color: #10131C;
+    border-radius: 12px;
+    border: 2px solid black;
+    padding: 2rem;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
+    h3{
+        margin-bottom: 1rem;
+    }
+
+
+   }
+   .title, .plus{
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    h4{
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        color: $paragraph-color;
+        text-align: start;
+    }
+    h2{
+        font-size: 3.5rem;
+        background: $gradient-title;
+        -webkit-background-clip: text; 
+        font-family: "Montserrat", Sans-serif;
+        background-clip: text; 
+        color: transparent;
+        
+    }
+    .plus-icon{
+        font-size: 50px;
+      }
+   }
+
+   .international, .secure{
+    border-left: 2px solid transparent;
+  transition: border-right-color 0.3s ease;
+
+  h3 {
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    border-left-color: #a487ff;
+
+    h3 {
+      color: #a487ff;
+    }
+  }
+}
+.advertiser, .venture{
+    border-left: 2px solid transparent;
+  transition: border-right-color 0.3s ease;
+
+  h3 {
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    border-left-color: $paragraph-color;
+
+    h3 {
+      color: $paragraph-color;
+    }
+  }
+
+}
+   }
