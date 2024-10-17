@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+/* import React, { useEffect, useRef, useState, useCallback } from "react";
 import Navbar from "./components/NavBar";
 import Hero from "./Hero";
 import EscrowAsAService from "./components/Escrow-as-a-Service";
@@ -11,20 +11,30 @@ import '../index.scss';
 
 export default function Home() {
   const [heroHeight, setHeroHeight] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const heroRef = useRef(null);
   const sectionsRef = useRef(null);
-  const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
+  const handleScroll = useCallback(() => {
+    if (!isMobile) {
+      setScrollY(window.scrollY);
+    }
+  }, [isMobile]);
+
+  const handleResize = useCallback(() => {
+    const mobile = window.innerWidth <= 768;
+    setIsMobile(mobile);
     if (heroRef.current) {
       setHeroHeight(heroRef.current.offsetHeight);
     }
+  }, []);
 
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  useEffect(() => {
+    handleResize();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -48,16 +58,17 @@ export default function Home() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
       if (sections) {
         Array.from(sections).forEach((section) => {
           observer.unobserve(section);
         });
       }
     };
-  }, []);
+  }, [handleScroll, handleResize]);
 
   return (
-    <div className="parallax-container">
+    <div className={`home-container ${isMobile ? 'mobile' : ''}`}>
       <Navbar className={scrollY > 50 ? 'navbar-scrolled' : ''} />
       <div 
         ref={heroRef} 
@@ -69,7 +80,7 @@ export default function Home() {
       <div 
         ref={sectionsRef} 
         className="sections-container" 
-        style={{ marginTop: `${heroHeight}px` }}
+        style={isMobile ? {} : { marginTop: `${heroHeight}px` }}
       >
         <EscrowAsAService />
         <Web3Solutions />
@@ -82,4 +93,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
+} */

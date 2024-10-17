@@ -7,7 +7,6 @@ import Why from './assets/components/Why-D-Share';
 import About from './assets/components/About';
 import BusinessCase from './assets/components/BusinessCase';
 import Footer from './assets/components/Footer';
-import Home from './assets/Home';
 
 import './index.scss';
 
@@ -16,8 +15,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-     {/*  <Route path="/" element={<><Hero/><EscrowAsAService/><Web3Solutions/><Why/><BusinessCase/><About/><Footer/></> } /> */}
-      <Route path="/" element={<Home/> } />
+      <Route path="/" element={<><Hero/><EscrowAsAService/><Web3Solutions/><Why/><BusinessCase/><About/><Footer/></> } />
+     {/*  <Route path="/" element={<Home/> } /> */}
       </Routes>
     </Router>
   );
