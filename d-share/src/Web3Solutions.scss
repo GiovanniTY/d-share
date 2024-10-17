@@ -1,20 +1,20 @@
 @import 'variables';
 
 .web3-solution {
-    padding: 4rem 2rem;
+    margin-top: 0;
+    padding: 2rem 1rem;
     background-color: black;
     font-family: "Montserrat", Sans-serif;
     width: 100%;
     overflow-x: hidden;
-    position: relative;
 
     &::before {
         content: '';
         position: absolute;
-        top: 200px;
-        left: 50px;
-        width: 500px;
-        height: 500px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 300px;
         background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
         border-radius: 50%;
         z-index: 1;
@@ -23,14 +23,14 @@
 
     h3 {
         font-size: clamp(1rem, 2vw, 1.5rem);
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         text-align: center;
         color: $paragraph-color;
     }
 
     h2 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-bottom: 5rem;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        margin-bottom: 3rem;
         text-align: center;
         background: $gradient-title;
         -webkit-background-clip: text;
@@ -39,15 +39,15 @@
     }
 
     .title-container {
-        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-size: clamp(1.3rem, 3vw, 2rem);
         color: white;
         text-align: center;
     }
 
     .web3-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
@@ -55,7 +55,7 @@
         align-items: stretch;
 
         .secure, .versatile, .fair, .data {
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: 2px solid #25C5DD;
@@ -64,16 +64,23 @@
             background-color: #10131C;
             height: 100%;
             width: 100%;
+            max-width: 350px;
 
             .title-icon {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 margin-bottom: 1rem;
+                text-align: center;
 
                 img {
-                    width: clamp(60px, 10vw, 100px);
-                    height: clamp(60px, 10vw, 100px);
-                    margin-right: 1rem;
+                    width: clamp(50px, 15vw, 80px);
+                    height: clamp(50px, 15vw, 80px);
+                    margin-bottom: 0.5rem;
+                }
+
+                h4 {
+                    font-size: clamp(1.1rem, 4vw, 1.3rem);
                 }
             }
 
@@ -85,19 +92,18 @@
 
                 img {
                     max-width: 100%; 
-                    max-height: 100%; 
-                    object-fit: cover; 
-                    margin-top: 2rem;
+                    max-height: 150px; 
+                    object-fit: contain; 
+                    margin-top: 1rem;
                 }
             }
 
             .web3-content {
                 margin-top: 1rem;
                 p {
-                    font-size: clamp(0.9rem, 1.5vw, 1rem);
-                    line-height: 1.6;
-                    margin-left: 0;
-                    text-align: left;
+                    font-size: clamp(0.9rem, 2.5vw, 1rem);
+                    line-height: 1.4;
+                    text-align: center;
                     color: $paragraph-white;
                     word-wrap: break-word;
                     overflow-wrap: break-word;
@@ -107,72 +113,88 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
     .web3-solution {
+        padding: 3rem 2rem;
+
+        &::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        h2 {
+            margin-bottom: 4rem;
+        }
+
         .web3-container {
             grid-template-columns: repeat(2, 1fr);
-            max-width: 1400px;
+            gap: 2rem;
 
             .secure, .versatile, .fair, .data {
-                padding: 3rem;
-                min-height: 400px;
+                padding: 2rem;
+                max-width: none;
 
                 .title-icon {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    text-align: left;
+
                     img {
-                        width: 120px;
-                        height: 120px;
+                        width: clamp(60px, 10vw, 90px);
+                        height: clamp(60px, 10vw, 90px);
+                        margin-right: 1rem;
+                        margin-bottom: 0;
                     }
                 }
 
-                .web3-content {
-                    p {
-                        font-size: 1.1rem;
-                    }
+                .image-container img {
+                    max-height: 180px;
+                }
+
+                .web3-content p {
+                    text-align: left;
                 }
             }
         }
     }
 }
 
-@media (max-width: 1199px) and (min-width: 769px) {
+@media (min-width: 1200px) {
     .web3-solution {
-        .web3-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .web3-solution {
-        padding: 2rem 1rem;
-        margin-top: 100px;
+        padding: 4rem 2rem;
 
         &::before {
-            width: 300px;
-            height: 300px;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            left: 100px;
+            transform: none;
         }
 
         .web3-container {
-            grid-template-columns: 1fr;
+            max-width: 1400px;
 
             .secure, .versatile, .fair, .data {
-                .title-icon {
-                    flex-direction: column;
-                    text-align: center;
+                padding: 2.5rem;
+                min-height: 450px;
 
+                .title-icon {
                     img {
-                        margin-right: 0;
-                        margin-bottom: 1rem;
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                    h4 {
+                        font-size: 1.5rem;
                     }
                 }
 
-                .web3-content {
-                    p {
-                        text-align: center;
-                    }
+                .image-container img {
+                    max-height: 200px;
+                }
+
+                .web3-content p {
+                    font-size: 1.1rem;
+                    line-height: 1.6;
                 }
             }
         }
@@ -181,19 +203,23 @@
 
 @media (max-width: 480px) {
     .web3-solution {
-        margin-top: 50px;
-
         &::before {
             width: 200px;
             height: 200px;
         }
 
         h2 {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .web3-container {
             gap: 1.5rem;
+            .secure, .versatile, .fair, .data {
+                padding: 1rem;
+                h4 {
+                    font-size: clamp(1.2rem, 5vw, 1.4rem);
+                }
+            }
         }
     }
 }

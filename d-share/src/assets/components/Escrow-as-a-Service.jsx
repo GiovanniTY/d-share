@@ -1,12 +1,11 @@
-// src/About.jsx
 import React from 'react';
-import '../../Escrow-as-a-Service.scss'; // Importa il CSS per la sezione
+import '../../Escrow-as-a-Service.scss'; 
 
 const EscrowAsAService = () => {
   return (
-    <div className='escrow-container'>
+    <section className='escrow-container'>
       <div className="escrow-as-a-service">
-        <h2>Escrow-as-a-Service</h2> {/* Cambiato da <p> a <h3> */}
+        <h2>Escrow-as-a-Service</h2> 
         <h3>AVOID COSTLY DISPUTES</h3>
         <p>
           D-Share redefines partnership agreements by making them smarter,
@@ -16,18 +15,18 @@ const EscrowAsAService = () => {
           partners or chasing down payments. It simplifies dispute resolution 
           and ensures that all parties adhere to agreed terms.
         </p>
+      </div>
+      <div className='info-escrow' aria-label="Statistiche sulle dispute contrattuali">
+        <div className='info-item'>
+          <p className='info-number' aria-label="Percentuale">60%</p>
+          <p className='info-string'>of all commercial disputes are contract-related.</p>
         </div>
-        <div className='info-escrow'>
-          <div className='info-item'>
-            <p className='info-number'>60%</p>
-            <p className='info-string'>of all commercial disputes are contract-related.</p>
-          </div>
-          <div className='info-item'>
-            <p className='info-number'>$1T</p>
-            <p className='info-string'>lost in annual contract disputes.</p>
+        <div className='info-item'>
+          <p className='info-number' aria-label="Valore monetario">$1T</p>
+          <p className='info-string last'>lost in annual contract disputes.</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

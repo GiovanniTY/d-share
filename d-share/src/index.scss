@@ -1,12 +1,28 @@
-* {
-  box-sizing: border-box;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
-}
-
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
   background-color: black;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 300px)and (max-width: 600px){
+html, body {
+  max-width: 99vw;
+  overflow-x: hidden;
+}
+#root{
+  width: 100%;
+  overflow-x: hidden;
+}
+      
+  }

@@ -71,6 +71,20 @@
 
 }
 
+@media (min-width: 900px) and (max-width: 1200px) {
+    .logo {
+        display: flex;
+        align-items: center;
+      
+        .logo-image {
+          width: 120px;
+          height: 50px;
+          object-fit: contain;
+        }
+      }
+
+}
+
 
 
 

@@ -5,19 +5,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 50px 50px 30px;
   background-color: black;
-  height: 100vh; 
+  min-height: 100vh;
+  height: auto;
   box-sizing: border-box;
   font-family: "Montserrat", Sans-serif;
 }
 
-
 .escrow-as-a-service {
+  flex: 1;
+  max-width: 600px;
+  margin-right: 50px;
   text-align: start;
-  padding-right: 30px;
-  width: 600px;
-  margin-left: 200px;
 
   h3 {
     font-size: 3.5rem;
@@ -34,7 +34,6 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: $paragraph-color;
-    
   }
 
   p {
@@ -44,9 +43,8 @@
   }
 }
 
-
 .info-escrow {
-  flex: 1; 
+  flex: 1;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -63,12 +61,10 @@
     height: 500px;
     background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
     border-radius: 50%;
-    z-index: 1; // Metti la bubble dietro al contenuto
+    z-index: 1;
     animation: bubble-animation 6s ease-in-out infinite;
   }
-  
 }
-
 
 .info-item {
   margin-bottom: 30px;
@@ -87,422 +83,155 @@
   }
 }
 
-
 @keyframes bubble-animation {
-  0% {
+  0%, 100% {
     transform: scale(1) translateY(0);
   }
   50% {
-    transform: scale(1.2) translateY(-20px);
-  }
-  100% {
-    transform: scale(1) translateY(0);
+    transform: scale(1.1) translateY(-10px);
   }
 }
 
-@media (min-width: 360px)and (max-width: 420px){
+@media (min-width: 250px) and  (max-width: 500px) {
   .escrow-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    background-color: black;
-    box-sizing: border-box;
-    font-family: "Montserrat", Sans-serif;
-    max-width: 100vw;
-
-
-
+    justify-content: center;
+    padding: 30px 15px 20px;
+    height: auto;
+    min-height: 100vh;
   }
-  
-  
+
   .escrow-as-a-service {
     text-align: center;
-    padding: 30px;
-    max-width: 90%;
-    margin-right: 180px;
-  
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto 30px;
+    width: 100%;
+
     h3 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      background: $gradient-title;
-      -webkit-background-clip: text; 
-      background-clip: text; 
-      color: transparent;
+      font-size: clamp(2rem, 5vw, 3.5rem);
       text-align: center;
     }
-  
+
     h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: $paragraph-color;
-      
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
-  
+
     p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: white;
+      font-size: clamp(1rem, 2vw, 1.5rem);
     }
   }
-  
-  
+
   .info-escrow {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    
-     &::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 100px;
-      height: 100px;
-      background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
-      border-radius: 50%;
-      z-index: 1; 
-      animation: bubble-animation 6s ease-in-out infinite;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+
+    &::before {
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
     }
-     
   }
-  
-  
+
   .info-item {
-    margin-bottom: 10px;
-  
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     .info-number {
-      font-size:3.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: white;
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
     }
-  
+
     .info-string {
-      font-size: 1.2rem;
-      color: white;
-      max-width: 150px;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      max-width: 200px;
     }
-  }
-  
-
-  @keyframes bubble-animation {
-    0% {
-      transform: scale(1) translateY(0);
-    }
-    50% {
-      transform: scale(1.2) translateY(-20px);
-    }
-    100% {
-      transform: scale(1) translateY(0);
-    } 
-  }
-}
-@media (min-width: 300px)and (max-width: 358px){
-  .escrow-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: black;
-    box-sizing: border-box;
-    font-family: "Montserrat", Sans-serif;
-    max-width: 100vw;
-
-
-
-  }
-  
-  
-  .escrow-as-a-service {
-    text-align: center;
-    padding: 30px;
-    max-width: 90%;
-    margin-right: 180px;
-  
-    h3 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      background: $gradient-title;
-      -webkit-background-clip: text; 
-      background-clip: text; 
-      color: transparent;
-      text-align: center;
-    }
-  
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: $paragraph-color;
-      
-    }
-  
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: white;
-    }
-  }
-  
-  
-  .info-escrow {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    
-     &::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 100px;
-      height: 100px;
-      background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
-      border-radius: 50%;
-      z-index: 1; 
-      animation: bubble-animation 6s ease-in-out infinite;
-    }
-     
-  }
-  
-  
-  .info-item {
-    margin-bottom: 10px;
-  
-    .info-number {
-      font-size:3.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: white;
-    }
-  
-    .info-string {
-      font-size: 1.2rem;
-      color: white;
-      max-width: 150px;
-    }
-  }
-  
-
-  @keyframes bubble-animation {
-    0% {
-      transform: scale(1) translateY(0);
-    }
-    50% {
-      transform: scale(1.2) translateY(-20px);
-    }
-    100% {
-      transform: scale(1) translateY(0);
-    } 
   }
 }
 
-@media (min-width: 421px)and (max-width: 760px){
+@media (min-width: 700px) and  (max-width: 980px) {
   .escrow-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    background-color: black;
-    box-sizing: border-box;
-    font-family: "Montserrat", Sans-serif;
-    max-width: 100vw;
-
-
-
+    justify-content: center;
+    padding: 30px 15px 20px;
+    height: auto;
+    min-height: 100vh;
   }
-  
-  
+
   .escrow-as-a-service {
     text-align: center;
-    padding: 30px;
-    max-width: 90%;
-    margin-right: 180px;
-  
+    padding: 0;
+    max-width: 70%;
+    margin: 0 auto 30px;
+    width: 100%;
+
     h3 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      background: $gradient-title;
-      -webkit-background-clip: text; 
-      background-clip: text; 
-      color: transparent;
+      font-size: clamp(2rem, 5vw, 3.5rem);
       text-align: center;
     }
-  
+
     h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: $paragraph-color;
-      
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
-  
+
     p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: white;
+      font-size: clamp(2rem, 2vw, 1.5rem);
     }
   }
-  
-  
+
   .info-escrow {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    
-  &::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 100px;
-      height: 100px;
-      background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
-      border-radius: 50%;
-      z-index: 1; // Metti la bubble dietro al contenuto
-      animation: bubble-animation 6s ease-in-out infinite;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+
+    &::before {
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
     }
-   
   }
-  
-  
+
   .info-item {
-    margin-bottom: 10px;
-  
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     .info-number {
-      font-size:3.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: white;
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
     }
-  
+
     .info-string {
-      font-size: 1.2rem;
-      color: white;
-      max-width: 150px;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      max-width: 200px;
     }
   }
-  
-  // Animazione per la bubble
-  @keyframes bubble-animation {
-    0% {
-      transform: scale(1) translateY(0);
-    }
-    50% {
-      transform: scale(1.2) translateY(-20px);
-    }
-    100% {
-      transform: scale(1) translateY(0);
-    } 
-  }
-} 
+}
 
-@media (min-width: 760px)and (max-width: 900px){
-  .escrow-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: black;
-    box-sizing: border-box;
-    font-family: "Montserrat", Sans-serif;
-    max-width: 100vw;
-
-
-
-  }
-  
-  
-  .escrow-as-a-service {
-    text-align: center;
-    padding: 30px;
-    max-width: 90%;
-    margin-right: 180px;
-  
-    h3 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      background: $gradient-title;
-      -webkit-background-clip: text; 
-      background-clip: text; 
-      color: transparent;
-      text-align: center;
-    }
-  
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: $paragraph-color;
-      
-    }
-  
-    p {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      color: white;
-    }
-  }
-  
-  
+@media (max-width: 420px) {
+  .escrow-as-a-service,
   .info-escrow {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    
-  &::before {
-      content: '';
-      position: absolute;
-      top: -200px;
-      left: 100px;
-      width: 400px;
-      height: 400px;
-      background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
-      border-radius: 50%;
-      z-index: 1;
-      animation: bubble-animation 6s ease-in-out infinite;
-    }
-   
+    padding: 0 10px;
   }
-  
-  
-  .info-item {
-    margin-bottom: 10px;
-  
-    .info-number {
-      font-size:3.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: white;
-    }
-  
-    .info-string {
-      font-size: 1.2rem;
-      color: white;
-      max-width: 150px;
-    }
-  }
-  
 
-  @keyframes bubble-animation {
-    0% {
-      transform: scale(1) translateY(0);
-    }
-    50% {
-      transform: scale(1.2) translateY(-20px);
-    }
-    100% {
-      transform: scale(1) translateY(0);
-    } 
+  .info-escrow::before {
+    width: 150px;
+    height: 150px;
   }
-} 
+
+  .info-item .info-string {
+    max-width: 100%;
+  }
+}

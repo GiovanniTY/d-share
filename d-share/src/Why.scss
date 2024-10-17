@@ -3,64 +3,60 @@
 .why-d-share {
   background-color: #000000;
   color: #ffffff;
-  padding: 4rem 2rem;
+  padding: 2rem 1rem;
   font-family: "Montserrat", Sans-serif;
+  position: relative;
+  overflow: hidden;
+
   &::before {
     content: '';
     position: absolute;
-    margin-top: 300px;
-    left:500px;
-    width: 500px;
-    height: 500px;
+    top: 100px;
+    left: 100px;
+    width: 300px;
+    height: 300px;
     background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
     border-radius: 50%;
     z-index: 1;
     animation: bubble-animation 5s ease-in-out infinite;
+    transform: translateX(-50%);
   }
-  
 
   .subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.5rem);
     color: $paragraph-white;
     margin-bottom: 1rem;
     text-align: center;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     background: $gradient-title;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
 
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem 2rem;
-    max-width: 1200px;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 100%;
     margin: 0 auto;
-    
   }
 
   .feature, .feature-image {
     background-color: #10131C;
     border-radius: 12px;
     border: 2px solid black;
-    padding: 2rem;
-    height: 400px;
+    padding: 1.5rem;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     transition: transform 0.3s ease;
-
-    &:nth-child(even) {
-      transform: translateY(-60px);
-
-      
-    }
   }
 
   .feature-image {
@@ -68,6 +64,7 @@
     border: none;
     justify-content: center;
     align-items: center;
+    display: none; // Nascondi su mobile
 
     img {
       max-width: 100%;
@@ -80,93 +77,115 @@
     overflow-y: auto;
 
     img {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       margin-bottom: 1rem;
     }
 
     h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      font-size: clamp(1.2rem, 5vw, 1.8rem);
+      margin-bottom: 0.5rem;
       color: #ffffff;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      line-height: 1.4;
       color: #d0d0d0;
     }
   }
-  .ghost-grid{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .ghost-grid {
+    display: none; // Nascondi su mobile
+  }
+
+  .plus-icon {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .why-d-share {
+    padding: 4rem 2rem;
+
     &::before {
-      content: '';
-      position: absolute;
-      margin-top: 100px;
-      left:200px;
       width: 500px;
       height: 500px;
-      background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
-      border-radius: 50%;
-      z-index: 1;
-      animation: bubble-animation 5s ease-in-out infinite;
-    }
-  }
-  .plus-icon{
-    font-size: 50px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .why-d-share {
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .feature, .feature-image {
-      &:nth-child(even) {
-        transform: translateY(0);
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .why-d-share {
-    padding: 2rem 1rem;
-
-    .title {
-      font-size: 2rem;
-    }
-
-    .feature, .feature-image {
-      height: auto;
-      min-height: 300px;
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .why-d-share {
-    .feature-image {
+      top: 20%;
       display: none;
     }
 
     .features-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 2rem;
+    }
+
+    .feature, .feature-image {
+      padding: 2rem;
+      min-height: 300px;
+    }
+
+    .feature-image {
+      display: flex;
     }
 
     .feature {
       &:nth-child(even) {
-        transform: translateY(0);
+        transform: translateY(-30px);
+      }
+
+      img {
+        width: 80px;
+        height: 80px;
       }
     }
 
-    &::before, .ghost-grid::before {
-      width: 200px;
-      height: 200px;
+    .ghost-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
+        border-radius: 50%;
+        z-index: 1;
+        animation: bubble-animation 5s ease-in-out infinite;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .plus-icon {
+      font-size: 50px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-d-share {
+    .features-grid {
+      max-width: 1200px;
+    }
+
+    .feature, .feature-image {
+      min-height: 400px;
+    }
+
+    .feature {
+      &:nth-child(even) {
+        transform: translateY(-60px);
+      }
+    }
+
+    .ghost-grid::before {
+      width: 500px;
+      height: 500px;
     }
   }
 }
