@@ -1,18 +1,18 @@
 .web3-solution {
-  padding: 4rem 2rem;
+  margin-top: 0;
+  padding: 2rem 1rem;
   background-color: black;
   font-family: "Montserrat", Sans-serif;
   width: 100%;
   overflow-x: hidden;
-  position: relative;
 }
 .web3-solution::before {
   content: "";
   position: absolute;
-  top: 200px;
-  left: 50px;
-  width: 500px;
-  height: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
   background-image: radial-gradient(at center center, rgba(0, 226, 255, 0.2) 0%, rgba(35, 53, 109, 0) 57%);
   border-radius: 50%;
   z-index: 1;
@@ -20,13 +20,13 @@
 }
 .web3-solution h3 {
   font-size: clamp(1rem, 2vw, 1.5rem);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   color: #9CF4FF;
 }
 .web3-solution h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 5rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 3rem;
   text-align: center;
   background: linear-gradient(180deg, #00E2FF 0%, #F8F8FF 48%);
   -webkit-background-clip: text;
@@ -34,14 +34,14 @@
   color: transparent;
 }
 .web3-solution .title-container {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.3rem, 3vw, 2rem);
   color: white;
   text-align: center;
 }
 .web3-solution .web3-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -49,7 +49,7 @@
   align-items: stretch;
 }
 .web3-solution .web3-container .secure, .web3-solution .web3-container .versatile, .web3-solution .web3-container .fair, .web3-solution .web3-container .data {
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 2px solid #25C5DD;
@@ -58,16 +58,22 @@
   background-color: #10131C;
   height: 100%;
   width: 100%;
+  max-width: 350px;
 }
 .web3-solution .web3-container .secure .title-icon, .web3-solution .web3-container .versatile .title-icon, .web3-solution .web3-container .fair .title-icon, .web3-solution .web3-container .data .title-icon {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
+  text-align: center;
 }
 .web3-solution .web3-container .secure .title-icon img, .web3-solution .web3-container .versatile .title-icon img, .web3-solution .web3-container .fair .title-icon img, .web3-solution .web3-container .data .title-icon img {
-  width: clamp(60px, 10vw, 100px);
-  height: clamp(60px, 10vw, 100px);
-  margin-right: 1rem;
+  width: clamp(50px, 15vw, 80px);
+  height: clamp(50px, 15vw, 80px);
+  margin-bottom: 0.5rem;
+}
+.web3-solution .web3-container .secure .title-icon h4, .web3-solution .web3-container .versatile .title-icon h4, .web3-solution .web3-container .fair .title-icon h4, .web3-solution .web3-container .data .title-icon h4 {
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
 }
 .web3-solution .web3-container .secure .image-container, .web3-solution .web3-container .versatile .image-container, .web3-solution .web3-container .fair .image-container, .web3-solution .web3-container .data .image-container {
   flex-grow: 1;
@@ -77,85 +83,107 @@
 }
 .web3-solution .web3-container .secure .image-container img, .web3-solution .web3-container .versatile .image-container img, .web3-solution .web3-container .fair .image-container img, .web3-solution .web3-container .data .image-container img {
   max-width: 100%;
-  max-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-top: 2rem;
+  max-height: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: 1rem;
 }
 .web3-solution .web3-container .secure .web3-content, .web3-solution .web3-container .versatile .web3-content, .web3-solution .web3-container .fair .web3-content, .web3-solution .web3-container .data .web3-content {
   margin-top: 1rem;
 }
 .web3-solution .web3-container .secure .web3-content p, .web3-solution .web3-container .versatile .web3-content p, .web3-solution .web3-container .fair .web3-content p, .web3-solution .web3-container .data .web3-content p {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  line-height: 1.6;
-  margin-left: 0;
-  text-align: left;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  line-height: 1.4;
+  text-align: center;
   color: #ffffff;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
+  .web3-solution {
+    padding: 3rem 2rem;
+  }
+  .web3-solution::before {
+    width: 400px;
+    height: 400px;
+  }
+  .web3-solution h2 {
+    margin-bottom: 4rem;
+  }
   .web3-solution .web3-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .web3-solution .web3-container .secure, .web3-solution .web3-container .versatile, .web3-solution .web3-container .fair, .web3-solution .web3-container .data {
+    padding: 2rem;
+    max-width: none;
+  }
+  .web3-solution .web3-container .secure .title-icon, .web3-solution .web3-container .versatile .title-icon, .web3-solution .web3-container .fair .title-icon, .web3-solution .web3-container .data .title-icon {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .web3-solution .web3-container .secure .title-icon img, .web3-solution .web3-container .versatile .title-icon img, .web3-solution .web3-container .fair .title-icon img, .web3-solution .web3-container .data .title-icon img {
+    width: clamp(60px, 10vw, 90px);
+    height: clamp(60px, 10vw, 90px);
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  .web3-solution .web3-container .secure .image-container img, .web3-solution .web3-container .versatile .image-container img, .web3-solution .web3-container .fair .image-container img, .web3-solution .web3-container .data .image-container img {
+    max-height: 180px;
+  }
+  .web3-solution .web3-container .secure .web3-content p, .web3-solution .web3-container .versatile .web3-content p, .web3-solution .web3-container .fair .web3-content p, .web3-solution .web3-container .data .web3-content p {
+    text-align: left;
+  }
+}
+@media (min-width: 1200px) {
+  .web3-solution {
+    padding: 4rem 2rem;
+  }
+  .web3-solution::before {
+    width: 500px;
+    height: 500px;
+    left: 100px;
+    transform: none;
+  }
+  .web3-solution .web3-container {
     max-width: 1400px;
   }
   .web3-solution .web3-container .secure, .web3-solution .web3-container .versatile, .web3-solution .web3-container .fair, .web3-solution .web3-container .data {
-    padding: 3rem;
-    min-height: 400px;
+    padding: 2.5rem;
+    min-height: 450px;
   }
   .web3-solution .web3-container .secure .title-icon img, .web3-solution .web3-container .versatile .title-icon img, .web3-solution .web3-container .fair .title-icon img, .web3-solution .web3-container .data .title-icon img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+  }
+  .web3-solution .web3-container .secure .title-icon h4, .web3-solution .web3-container .versatile .title-icon h4, .web3-solution .web3-container .fair .title-icon h4, .web3-solution .web3-container .data .title-icon h4 {
+    font-size: 1.5rem;
+  }
+  .web3-solution .web3-container .secure .image-container img, .web3-solution .web3-container .versatile .image-container img, .web3-solution .web3-container .fair .image-container img, .web3-solution .web3-container .data .image-container img {
+    max-height: 200px;
   }
   .web3-solution .web3-container .secure .web3-content p, .web3-solution .web3-container .versatile .web3-content p, .web3-solution .web3-container .fair .web3-content p, .web3-solution .web3-container .data .web3-content p {
     font-size: 1.1rem;
-  }
-}
-@media (max-width: 1199px) and (min-width: 769px) {
-  .web3-solution .web3-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .web3-solution {
-    padding: 2rem 1rem;
-    margin-top: 100px;
-  }
-  .web3-solution::before {
-    width: 300px;
-    height: 300px;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .web3-solution .web3-container {
-    grid-template-columns: 1fr;
-  }
-  .web3-solution .web3-container .secure .title-icon, .web3-solution .web3-container .versatile .title-icon, .web3-solution .web3-container .fair .title-icon, .web3-solution .web3-container .data .title-icon {
-    flex-direction: column;
-    text-align: center;
-  }
-  .web3-solution .web3-container .secure .title-icon img, .web3-solution .web3-container .versatile .title-icon img, .web3-solution .web3-container .fair .title-icon img, .web3-solution .web3-container .data .title-icon img {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-  .web3-solution .web3-container .secure .web3-content p, .web3-solution .web3-container .versatile .web3-content p, .web3-solution .web3-container .fair .web3-content p, .web3-solution .web3-container .data .web3-content p {
-    text-align: center;
+    line-height: 1.6;
   }
 }
 @media (max-width: 480px) {
-  .web3-solution {
-    margin-top: 50px;
-  }
   .web3-solution::before {
     width: 200px;
     height: 200px;
   }
   .web3-solution h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   .web3-solution .web3-container {
     gap: 1.5rem;
+  }
+  .web3-solution .web3-container .secure, .web3-solution .web3-container .versatile, .web3-solution .web3-container .fair, .web3-solution .web3-container .data {
+    padding: 1rem;
+  }
+  .web3-solution .web3-container .secure h4, .web3-solution .web3-container .versatile h4, .web3-solution .web3-container .fair h4, .web3-solution .web3-container .data h4 {
+    font-size: clamp(1.2rem, 5vw, 1.4rem);
   }
 }/*# sourceMappingURL=Web3Solutions.css.map */

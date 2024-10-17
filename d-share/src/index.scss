@@ -26,3 +26,51 @@ html, body {
 }
       
   }
+
+  .parallax-container {
+    overflow-x: hidden;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  
+    &.navbar-scrolled {
+       background-color: black; 
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .hero-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  
+  .sections-container {
+    position: relative;
+    z-index: 1;
+   background-color: black; 
+  }
+  
+  .sections-container > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .sections-container > *.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .about-footer-container {
+    display: flex;
+    flex-direction: column;
+  }
