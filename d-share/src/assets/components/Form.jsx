@@ -32,45 +32,52 @@ export default function ContactForm() {
     return DOMPurify.sanitize(input, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
   }, []);
 
-  const sendEmail = useCallback((e) => {
+  const sendEmail = useCallback(async (e) => {
     e.preventDefault();
-    
+  
     if (!validateForm()) return;
-
+  
     const now = Date.now();
     if (now - lastSubmitTime < RATE_LIMIT_TIME) {
       setStatus(`Please wait ${Math.ceil((RATE_LIMIT_TIME - (now - lastSubmitTime)) / 1000)} seconds before sending another message.`);
       return;
     }
-
+  
     setIsLoading(true);
     setStatus('Sending...');
-
+  
     const sanitizedForm = {
-      user_name: sanitizeInput(form.current.user_name.value),
-      user_email: sanitizeInput(form.current.user_email.value),
+      name: sanitizeInput(form.current.user_name.value),
+      email: sanitizeInput(form.current.user_email.value),
       message: sanitizeInput(form.current.message.value)
     };
-
-    emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      sanitizedForm,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-      .then((result) => {
-        console.log(result.text);
+  
+    try {
+      // Invia la richiesta POST al tuo backend Fastify
+      const response = await fetch('http://localhost:3000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(sanitizedForm)
+      });
+  
+      const result = await response.json();
+      if (result.success) {
         setStatus('Message sent successfully!');
         form.current.reset();
         setLastSubmitTime(now);
-      }, (error) => {
-        console.error('EmailJS error:', error);
+      } else {
         setStatus('Failed to send message. Please try again later.');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      setStatus('Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   }, [lastSubmitTime, sanitizeInput, validateForm]);
+  
 
   useEffect(() => {
     let timer;

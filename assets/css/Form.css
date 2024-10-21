@@ -1,0 +1,82 @@
+.contact-form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+.contact-form-container .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: "Montserrat", Sans-serif;
+}
+.contact-form-container .contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form-container .contact-form .form-group label {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+}
+.contact-form-container .contact-form .form-group input,
+.contact-form-container .contact-form .form-group textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.contact-form-container .contact-form .form-group input:focus,
+.contact-form-container .contact-form .form-group textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+.contact-form-container .contact-form .form-group input.error,
+.contact-form-container .contact-form .form-group textarea.error {
+  border-color: #e74c3c;
+}
+.contact-form-container .contact-form .form-group textarea {
+  resize: vertical;
+}
+.contact-form-container .contact-form .form-group .error-message {
+  color: #e74c3c;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+.contact-form-container .contact-form .form-group button {
+  padding: 0.75rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-form-container .contact-form .form-group button:hover:not(:disabled) {
+  background-color: #3a7bc8;
+}
+.contact-form-container .contact-form .form-group button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.4);
+}
+.contact-form-container .contact-form .form-group button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.contact-form-container .status-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.contact-form-container .status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.contact-form-container .status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}/*# sourceMappingURL=Form.css.map */
