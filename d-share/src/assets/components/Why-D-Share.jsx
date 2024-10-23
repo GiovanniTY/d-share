@@ -14,7 +14,7 @@ export default function Why() {
             <p>Experience effortless transitions between fiat and digital currencies with D-Share's innovative on/off ramping feature. Our platform ensures smooth currency conversions, facilitating easy entry and exit points for users new to the digital economy. This integration bridges the gap between traditional finance and the Web3 world, making transactions accessible to a broader audience.</p>
           </div>
           <div className="feature-image">
-            <img src="../../../public/d-share-icon/maniabilité.png" alt="D-Share feature illustration" />
+            <img src="d-share-icon/maniabilité.png" alt="D-Share feature illustration" />
           </div>
           <div className="feature web2">
             <img src="poligon/noun-polygon-2596326.png" alt="Web2 Usability icon" />
