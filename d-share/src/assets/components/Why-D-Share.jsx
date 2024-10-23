@@ -16,15 +16,16 @@ export default function Why() {
           <div className="feature-image">
             <img src="../../../public/d-share-icon/maniabilité.png" alt="D-Share feature illustration" />
           </div>
-          <div className="feature tailored-disputes">
-            <img src="poligon/noun-polygon-2596326.png" alt="Tailored Dispute Resolution icon" />
-            <h3>Tailored Dispute Resolution</h3>
-            <p>At D-Share, we understand the importance of fair and efficient conflict resolution. Our platform allows for custom mediation or the selection of pre-vetted judicial agents globally. This unique feature provides a diverse range of dispute resolution options, catering to the specific needs and legal frameworks of different regions, thereby ensuring a truly global and adaptable solution.</p>
-          </div>
           <div className="feature web2">
             <img src="poligon/noun-polygon-2596326.png" alt="Web2 Usability icon" />
             <h3>Web2 Usability</h3>
             <p>D-Share's semi-custodial wallet strikes the perfect balance between security and convenience. Designed for Web2 usability while harnessing the power of Web3 technology, it offers a user-friendly interface without compromising on the advanced features of blockchain technology. This approach caters to both crypto-savvy users and newcomers, making digital transactions more accessible than ever.</p>
+          </div>
+         
+          <div className="feature tailored-disputes">
+            <img src="poligon/noun-polygon-2596326.png" alt="Tailored Dispute Resolution icon" />
+            <h3>Tailored Dispute Resolution</h3>
+            <p>At D-Share, we understand the importance of fair and efficient conflict resolution. Our platform allows for custom mediation or the selection of pre-vetted judicial agents globally. This unique feature provides a diverse range of dispute resolution options, catering to the specific needs and legal frameworks of different regions, thereby ensuring a truly global and adaptable solution.</p>
           </div>
           <div className="ghost-grid">
           <HiOutlinePlus className="plus-icon"/>

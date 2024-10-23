@@ -29,7 +29,7 @@
    }
 
    .feature {
-    background-color: #10131C;
+    background-color:#151515;
     border-radius: 12px;
     border: 2px solid black;
     padding: 1.5rem;
@@ -47,6 +47,7 @@
     p {
         font-size: clamp(0.9rem, 1.5vw, 1rem);
         line-height: 1.6;
+        color: $paragraph-white;
     }
    }
 
@@ -73,6 +74,11 @@
     .plus-icon {
         font-size: clamp(30px, 5vw, 50px);
     }
+   }
+   .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
    }
 
    .international, .secure {

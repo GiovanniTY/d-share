@@ -3,7 +3,7 @@
 .why-d-share {
   background-color: #000000;
   color: #ffffff;
-  padding: 2rem 1rem;
+  padding: 2rem 10rem!important; // Riduci il padding per dispositivi piccoli
   font-family: "Montserrat", Sans-serif;
   position: relative;
   overflow: hidden;
@@ -11,10 +11,9 @@
   &::before {
     content: '';
     position: absolute;
-    top: 100px;
-    left: 100px;
-    width: 300px;
-    height: 300px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
     background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
     border-radius: 50%;
     z-index: 1;
@@ -23,52 +22,59 @@
   }
 
   .subtitle {
-    font-size: clamp(1rem, 4vw, 1.5rem);
-    color: $paragraph-white;
-    margin-bottom: 1rem;
-    text-align: center;
+    font-size: clamp(0.8rem, 3vw, 1.2rem); // Riduci il font per schermi più piccoli
+    color: $paragraph-color;
+    margin-bottom: 0.5rem;
+    text-align: end;
+    margin-right: 20px; // Riduci il margine
   }
 
   .title {
-    font-size: clamp(2rem, 6vw, 3rem);
+    text-align: end;
+    font-size: clamp(1.5rem, 5vw, 2.5rem); // Riduci il font per schermi piccoli
     background: $gradient-title;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-bottom: 2rem;
-    text-align: center;
+    margin-bottom: 4rem;
+    letter-spacing: -0.1rem; // Riduci lo spacing
   }
 
   .features-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 100%;
     margin: 0 auto;
   }
 
-  .feature, .feature-image {
-    background-color: #10131C;
+   .crypto-fiat, .tailored-disputes {
+    background-color: #151515!important;
     border-radius: 12px;
     border: 2px solid black;
-    padding: 1.5rem;
-    min-height: 200px;
+    padding: 1rem; // Riduci il padding
+    max-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     transition: transform 0.3s ease;
   }
+  .tailored-disputes {
+    position: relative;
+    top: -20px; // Riduci il posizionamento
+  }
 
   .feature-image {
     background-color: transparent;
     border: none;
+    height: 150px; // Riduci l'altezza per schermi piccoli
     justify-content: center;
     align-items: center;
     display: none; // Nascondi su mobile
 
     img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 70%;
+      max-height: 70%;
       object-fit: contain;
     }
   }
@@ -77,21 +83,21 @@
     overflow-y: auto;
 
     img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 1rem;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.3rem!important;
     }
 
     h3 {
-      font-size: clamp(1.2rem, 5vw, 1.8rem);
-      margin-bottom: 0.5rem;
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      margin-bottom: 0.3rem;
       color: #ffffff;
     }
 
     p {
-      font-size: clamp(0.9rem, 3vw, 1rem);
-      line-height: 1.4;
-      color: #d0d0d0;
+      font-size: clamp(0.8rem, 3vw, 0.9rem);
+      line-height: 1.3;
+      color: $paragraph-white;
     }
   }
 
@@ -100,69 +106,73 @@
   }
 
   .plus-icon {
-    font-size: 40px;
+    font-size: 30px; // Riduci la dimensione dell'icona
   }
 }
 
+// Aggiungiamo una media query per schermi molto piccoli (iPhone, Android)
+@media (max-width: 600px) {
+  .why-d-share {
+    padding: 1rem!important; // Ridurre il padding su schermi piccoli
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .subtitle, .title {
+    text-align: center; // Centratura per migliorare la leggibilità
+    margin-right: 0;
+  }
+
+  .feature-image {
+    display: none; // Manteniamo l'immagine nascosta su mobile
+  }
+
+  .plus-icon {
+    font-size: 25px; // Riduci ulteriormente su schermi piccoli
+  }
+}
+
+// Per iPad e tablet
 @media (min-width: 768px) {
   .why-d-share {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
 
     &::before {
-      width: 500px;
-      height: 500px;
+      width: 400px;
+      height: 400px;
       top: 20%;
-      display: none;
     }
 
     .features-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4rem 2rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
     .feature, .feature-image {
-      padding: 2rem;
-      min-height: 300px;
+      padding: 1.5rem;
+      min-height: 250px;
     }
 
     .feature-image {
       display: flex;
+      img{
+        width: 70%;
+        height: 70%;
+      }
     }
 
     .feature {
       &:nth-child(even) {
-        transform: translateY(-30px);
+        transform: translateY(-20px);
       }
 
       img {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
       }
-    }
-
-    .ghost-grid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 300px;
-        height: 300px;
-        background-image: radial-gradient(at center center, #00E2FF33 0%, #23356D00 57%);
-        border-radius: 50%;
-        z-index: 1;
-        animation: bubble-animation 5s ease-in-out infinite;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    .plus-icon {
-      font-size: 50px;
     }
   }
 }
@@ -171,15 +181,18 @@
   .why-d-share {
     .features-grid {
       max-width: 1200px;
+      grid-template-columns: repeat(2, 1fr);
+
     }
 
+
     .feature, .feature-image {
-      min-height: 400px;
+      min-height: 350px;
     }
 
     .feature {
       &:nth-child(even) {
-        transform: translateY(-60px);
+        transform: translateY(-40px);
       }
     }
 

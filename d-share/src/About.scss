@@ -9,90 +9,102 @@
     min-height: 100vh;
     box-sizing: border-box;
     font-family: "Montserrat", Sans-serif;
-
+  
     h2 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-weight: bold;
-        margin-bottom: 4vh;
-        background: $gradient-title;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-align: center;
-        position: relative;
+      font-size: 5rem;
+      font-weight: bold;
+      margin-bottom: 4vh;
+      background: $gradient-title; 
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-align: center;
+      position: relative;
       
+      /* Effetto Star Wars: inclinazione e prospettiva */
+      letter-spacing: -2px;
+      text-transform: uppercase;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+      }
     }
-        
-
+  
     h3 {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        color: $paragraph-white;
-        margin-top: 1vh;
-        margin-bottom: 1vh;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: $paragraph-white;
+      margin-top: 1vh;
+      margin-bottom: 1vh;
     }
-
+  
     h4 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        font-weight: bold;
-        margin-bottom: 3vh;
-        background: $gradient-title;
-        -webkit-background-clip: text; 
-        background-clip: text; 
-        color: transparent;
-        text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 3vh;
+      background: $gradient-title;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      max-width: 500px;
+      text-align: center;
     }
-
+  
     p {
-        color: $paragraph-white;
-        margin-bottom: 3vh;
-        font-size: clamp(0.9rem, 1.5vw, 1rem);
-        text-align: center;
+      color: $paragraph-white;
+      margin-bottom: 3vh;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      text-align: center;
     }
-}
-
-.about-container {
+  }
+  
+  .about-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 4vw;
+    gap: 2vw;
     width: 100%;
     max-width: 1200px;
-
+  
     .item-about {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2vh 2vw;
-        text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2vh 2vw;
+      text-align: center;
     }
-
+  
     img {
-        height: clamp(150px, 20vw, 200px);
-        width: clamp(150px, 20vw, 200px);
-        border-radius: 50%;
-        object-fit: cover;
+      height: clamp(150px, 20vw, 200px);
+      width: clamp(150px, 20vw, 200px);
+      border-radius: 50%;
+      object-fit: cover;
     }
-
+  
     .round-icon {
-        width: clamp(35px, 5vw, 45px);
-        height: clamp(35px, 5vw, 45px);
-        border-radius: 50%;
-        background-color: $button-color;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        margin-top: 1vh;
+      width: clamp(35px, 5vw, 45px);
+      height: clamp(35px, 5vw, 45px);
+      border-radius: 50%;
+      background-color: $button-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-top: 1vh;
     }
-    
+  
     .linkedin-icon {
-        font-size: clamp(20px, 3vw, 25px);
-        color: black;
+      font-size: clamp(20px, 3vw, 25px);
+      color: black;
     }
-}
-
-.community-section {
+  }
+  
+  .community-section {
     margin-top: 8vh;
     max-width: 90%;
     display: flex;
@@ -100,51 +112,51 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+  
     .telegram-icon {
-        color: $button-color;
-        font-size: clamp(24px, 5vw, 36px);
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: #0099e5;
-        }
+      color: $button-color;
+      font-size: clamp(24px, 5vw, 36px);
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: #0099e5;
+      }
     }
-}
+  }
 
 @media (max-width: 768px) {
-    .about {
-        padding: 3vh 3vw;
+  .about {
+    padding: 3vh 3vw;
 
-        h2 {
-            transform: none;
-            &::before, &::after {
-                display: none;
-            }
-            &:hover {
-                transform: none;
-            }
-        }
+    h2 {
+      transform: none;
+      &::before, &::after {
+        display: none;
+      }
+      &:hover {
+        transform: none;
+      }
     }
+  }
 
-    .about-container {
-        flex-direction: column;
-        gap: 4vh;
-    }
+  .about-container {
+    flex-direction: column;
+    gap: 4vh;
+  }
 
-    .community-section {
-        max-width: 100%;
-    }
+  .community-section {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-    .about {
-        padding: 2vh 2vw;
-    }
+  .about {
+    padding: 2vh 2vw;
+  }
 
-    .about-container {
-        .item-about {
-            width: 100%;
-        }
+  .about-container {
+    .item-about {
+      width: 100%;
     }
+  }
 }
