@@ -3,6 +3,14 @@
   margin: 2rem auto;
   padding: 1rem;
 }
+.contact-form-container h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  background: linear-gradient(180deg, #00E2FF 0%, #F8F8FF 48%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
 .contact-form-container .contact-form {
   display: flex;
   flex-direction: column;
@@ -45,14 +53,17 @@
   margin-top: 0.25rem;
 }
 .contact-form-container .contact-form .form-group button {
-  padding: 0.75rem 1rem;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: black;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  background-color: #01C3DC;
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border: 2px solid transparent;
+  font-size: 14px;
+  max-width: 80%;
+  margin: 0 auto;
 }
 .contact-form-container .contact-form .form-group button:hover:not(:disabled) {
   background-color: #3a7bc8;

@@ -1,9 +1,9 @@
 .escrow-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 50px 50px 30px;
+  padding: 150px;
   background-color: black;
   min-height: 100vh;
   height: auto;
@@ -14,13 +14,13 @@
 .escrow-as-a-service {
   flex: 1;
   max-width: 600px;
-  margin-right: 50px;
   text-align: start;
 }
 .escrow-as-a-service h3 {
-  font-size: 3.5rem;
+  font-size: 4.6rem;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: 2rem;
   background: linear-gradient(180deg, #00E2FF 0%, #F8F8FF 48%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -29,17 +29,18 @@
 }
 .escrow-as-a-service h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
   color: #9CF4FF;
 }
 .escrow-as-a-service p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: white;
+  font-weight: 400;
+  color: rgb(167, 167, 167);
 }
 
 .info-escrow {
-  flex: 1;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -51,7 +52,7 @@
   content: "";
   position: absolute;
   top: 50px;
-  left: 100px;
+  left: -200px;
   width: 500px;
   height: 500px;
   background-image: radial-gradient(at center center, rgba(0, 226, 255, 0.2) 0%, rgba(35, 53, 109, 0) 57%);
@@ -64,15 +65,17 @@
   margin-bottom: 30px;
 }
 .info-item .info-number {
-  font-size: 4.5rem;
+  font-size: 4.8rem;
   font-weight: bold;
   margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
   color: white;
 }
 .info-item .info-string {
   font-size: 1.2rem;
-  color: white;
-  max-width: 250px;
+  font-weight: 400;
+  color: rgb(167, 167, 167);
+  max-width: 400px;
 }
 
 @keyframes bubble-animation {

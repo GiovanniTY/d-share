@@ -17,7 +17,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="nav-links">
-          <a href="https://app.d-share.io/dashboard">Launch App</a>
+          <a href="https://app.d-share.io/dashboard">LAUNCH APP</a>
         </div>
       </div>
     </nav>
