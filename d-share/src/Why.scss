@@ -31,7 +31,7 @@
 
   .title {
     text-align: end;
-    font-size: clamp(1.5rem, 5vw, 2.5rem); // Riduci il font per schermi piccoli
+    font-size: clamp(4rem, 5vw, 2.5rem); // Riduci il font per schermi piccoli
     background: $gradient-title;
     -webkit-background-clip: text;
     background-clip: text;
