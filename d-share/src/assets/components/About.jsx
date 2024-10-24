@@ -6,7 +6,11 @@ import '../../About.scss'
 export default function About() {
     return (
         <div className="about">
-            <h2>MEET OUR HEROES</h2>
+            <div className="star-wars-container">
+                <div className="star-wars-text">
+                    <h2>MEET OUR HEROES</h2>
+                </div>
+            </div>
             <div className="about-container">
                 <div className="item-about">
                     <img src="/avatar/Harold avatar.png" alt="Harold Kinet" />

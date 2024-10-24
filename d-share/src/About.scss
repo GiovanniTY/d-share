@@ -10,8 +10,23 @@
     box-sizing: border-box;
     font-family: "Montserrat", Sans-serif;
   
+    .star-wars-container {
+      perspective: 400px;
+      height: 300px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .star-wars-text {
+      transform-style: preserve-3d;
+      animation: crawl 60s linear infinite;
+    }
+  
     h2 {
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: bold;
       margin-bottom: 4vh;
       background: $gradient-title; 
@@ -21,38 +36,30 @@
       text-align: center;
       position: relative;
       
-      /* Effetto Star Wars: inclinazione e prospettiva */
+      /* Star Wars effect: tilt and perspective */
+      transform: rotateX(25deg);
       letter-spacing: -2px;
       text-transform: uppercase;
-  
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-      }
     }
   
     h3 {
       font-size: clamp(1rem, 2vw, 1.2rem);
-      color: $paragraph-white;
+      color: white;
       margin-top: 1vh;
       margin-bottom: 1vh;
     }
   
     h4 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: bold;
       margin-bottom: 3vh;
       background: $gradient-title;
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      max-width: 500px;
+      max-width: 600px;
       text-align: center;
+      letter-spacing: -0.08rem;
     }
   
     p {
@@ -61,9 +68,9 @@
       font-size: clamp(0.9rem, 1.5vw, 1rem);
       text-align: center;
     }
-  }
+}
   
-  .about-container {
+.about-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,9 +109,9 @@
       font-size: clamp(20px, 3vw, 25px);
       color: black;
     }
-  }
+}
   
-  .community-section {
+.community-section {
     margin-top: 8vh;
     max-width: 90%;
     display: flex;
@@ -122,22 +129,30 @@
         color: #0099e5;
       }
     }
-  }
+}
+
+/* @keyframes crawl {
+    0% {
+        transform: rotateX(20deg) translateZ(0);
+    }
+    100% {
+        transform: rotateX(25deg) translateZ(-1500px);
+    }
+} */
 
 @media (max-width: 768px) {
   .about {
     padding: 3vh 3vw;
 
+    .star-wars-container {
+      height: 200px;
+    }
+
     h2 {
-      transform: none;
-      &::before, &::after {
-        display: none;
-      }
-      &:hover {
-        transform: none;
-      }
+      font-size: 3rem;
     }
   }
+
 
   .about-container {
     flex-direction: column;
@@ -146,12 +161,24 @@
 
   .community-section {
     max-width: 100%;
+    h4{
+        font-size: 2.5rem;
+    }
   }
+
 }
 
 @media (max-width: 480px) {
   .about {
     padding: 2vh 2vw;
+
+    .star-wars-container {
+      height: 150px;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
   }
 
   .about-container {
@@ -159,4 +186,12 @@
       width: 100%;
     }
   }
+}
+
+@media (min-width: 760px) and  (max-width: 860px) {
+    .about-container {
+      gap: 1px;
+      max-width: 800px;
+      width: auto;
+    }
 }

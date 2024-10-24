@@ -130,3 +130,10 @@
         }
     }
 }
+
+@media (max-width: 890px) and (min-width: 770px) {
+    .web3-container {
+      grid-template-columns: repeat(1, 1fr)!important;
+    }
+  }
+  
